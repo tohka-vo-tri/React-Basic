@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Nav from './view/Nav.js'
 import { useState } from 'react';
+import Todo from './view/Todo';
 //logic + ctemplate 
 //jsx
 //bable 
@@ -42,17 +43,10 @@ const App = () => {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1>hello word  with reatct {name}  </h1>
-        <div className="todo-container">
-          {todos.map(todos => {
-            console.log('>>>check todo', todos)
-            return (
-              <li className='todo-child' key={todos.id}>{todos.title}</li>
-            )
-          })}
-          <li className="todo-child">em hiu doing homework</li>
-          <li className="todo-child">em hiu doing homework</li>
-
-        </div>
+        <Todo
+          mydata={todos}//bên trái tên của props muốn truyền đi bên phải là giá trị của nó
+          title='all pro'
+        />
         <input type="text" value={addres} onChange={(event) => handleOnChangeInpput(event)} />
         <button type="button" onClick={(event) => handleEventClick(event)}>Click me </button>
       </header>
